@@ -4,6 +4,8 @@ import '../components/UITheme.css';
 import {useState} from 'react';
 import axios from "axios";
 
+import $ from 'jquery';
+
 //import {ExcelJS} from 'exceljs';
 
 
@@ -12,6 +14,10 @@ function UITheme() {
       const [posts, setPosts] = useState([]);
 
      // const workbook = new ExcelJS.Workbook();
+
+     $(".j-button").on('click',function(){
+       console.log("JQuery Worked");
+    });
 
       function callAPI() {
         axios({
@@ -61,6 +67,10 @@ function UITheme() {
 
             <button onClick={callAPI}>
                 click
+            </button>
+
+            <button className='j-button' >
+                click Jquery
             </button>
             </div>
         );
