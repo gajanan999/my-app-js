@@ -2,19 +2,43 @@
 import React from 'react';
 import '../components/UITheme.css';
 import {useState} from 'react';
+import axios from "axios";
+
+//import {ExcelJS} from 'exceljs';
 
 
 function UITheme() {
       
       const [posts, setPosts] = useState([]);
 
+     // const workbook = new ExcelJS.Workbook();
+
       function callAPI() {
-        fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
-        .then((response) => response.json())
-        .then((data) => {
-           console.log(data);
-            setPosts(data);
-        });
+        axios({
+  
+            // Endpoint to send files
+            url: "https://jsonplaceholder.typicode.com/posts?_limit=10",
+            method: "GET",
+          })
+        
+            // Handle the response from backend here
+            .then((res) => {
+                console.log(res);
+                setPosts(res.data);
+             })
+        
+            // Catch errors if any
+            .catch((err) => { 
+
+                console.log('Error in axios');
+            });
+        
+        // fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+        // .then((response) => response.json())
+        // .then((data) => {
+        //    console.log(data);
+        //     setPosts(data);
+        // });
       }
     
         return ( 
