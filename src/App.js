@@ -1,20 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 
+import UITheme from './components/UITheme';
+
 function App() {
-
-  function openEval(){
-    return alert("1");
-  }
-
-  function openEval1(){
-    return "<script>alert('hacked')</script>"
-  }
 
   return (
     <div className="App">
       <header className="App-header">
-        
+        <UITheme></UITheme>
+        <div style={{fontSize:24}} className="hello-world">
+          Hello world
+      </div>
       </header>
     </div>
   );
