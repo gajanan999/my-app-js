@@ -3,6 +3,7 @@ import React from 'react';
 import '../components/UITheme.css';
 import {useState} from 'react';
 import axios from "axios";
+import { saveAs } from 'file-saver';
 
 import $ from 'jquery';
 
@@ -17,6 +18,9 @@ function UITheme() {
 
      $(".j-button").on('click',function(){
        console.log("JQuery Worked");
+       let  blob = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
+
+       saveAs(blob, "hello world.txt");
     });
 
       function callAPI() {
