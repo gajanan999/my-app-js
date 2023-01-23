@@ -3,18 +3,18 @@ module.exports = {
     "default-src": ["'self'"],
     "style-src": [
       "'self'",
-      "https://*.google.com",
+      "*.typicode.com",
     ]
     },
     prod: {
     "default-src": "'self'",  // can be either a string or an array.
     "style-src": [
       "'self'",
-      "https://*.facebook.com",
+      "*.typicode.com",
     ],
     "connect-src": [
       "'self'",
-      "https://mybackend.com"
+      "*.typicode.com"
     ]
     }
   }
