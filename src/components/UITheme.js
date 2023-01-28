@@ -74,6 +74,9 @@ function UITheme() {
                     <a className="nav-link" href="/features">Features</a>
                 </li>
                 <li className="nav-item">
+                    <a className="nav-link" href="/featureOne">FeatureOne</a>
+                </li>
+                <li className="nav-item">
                     <a className="nav-link" href="/testing">Testing</a>
                 </li>
                 </ul>

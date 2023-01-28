@@ -4,6 +4,8 @@ import React  from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Testing  from  './components/Testing/testing';
 import Feature  from  './components/Feature/feature';
+import FeatureOne from './components/FeatureOne/feature-one';
+import "gridjs/dist/theme/mermaid.css";
 //import Moment from 'react-moment';
 
 import UITheme from './components/UITheme';
@@ -19,6 +21,7 @@ function App() {
           <Route exact path="/" element={<UITheme/>}/>
           <Route exact path="/testing" element={<Testing/>}/>
           <Route exact path="/features" element={<Feature/>}/>
+          <Route exact path="/featureOne" element={<FeatureOne/>}/>
         </Routes >
       </Router>
   );
