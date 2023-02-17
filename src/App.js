@@ -7,6 +7,7 @@ import Feature  from  './components/Feature/feature';
 import FeatureOne from './components/FeatureOne/feature-one';
 import "gridjs/dist/theme/mermaid.css";
 //import Moment from 'react-moment';
+import CspFeature from './components/CspFeature/csp-feature';
 
 import UITheme from './components/UITheme';
 //import { Grid } from 'gridjs-react';
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/testing" element={<Testing/>}/>
           <Route exact path="/features" element={<Feature/>}/>
           <Route exact path="/featureOne" element={<FeatureOne/>}/>
+          <Route exact path="/cspFeature" element={<CspFeature/>}/>
         </Routes >
       </Router>
   );

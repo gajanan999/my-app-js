@@ -28,9 +28,9 @@
     "xlsx": "^0.18.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "stop": "react-scripts stop",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "stop": "react-app-rewired stop",
+    "build": "react-app-rewired build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
