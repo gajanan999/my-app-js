@@ -67,21 +67,24 @@ function UITheme() {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav">
-                <li className="nav-item active">
-                    <a className="nav-link" href="/">Home</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="/features">Features</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="/featureOne">FeatureOne</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="/cspFeature">CspFeature</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="/testing">Testing</a>
-                </li>
+                    <li className="nav-item active">
+                        <a className="nav-link" href="/">Home</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/features">Features</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/featureOne">FeatureOne</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/cspFeature">CspFeature</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/cspFeatureWithHtmlEditor">CspFeatureWithHtmlEditor</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/testing">Testing</a>
+                    </li>
                 </ul>
             </div>
             </nav>

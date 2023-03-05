@@ -8,6 +8,8 @@ import FeatureOne from './components/FeatureOne/feature-one';
 import "gridjs/dist/theme/mermaid.css";
 //import Moment from 'react-moment';
 import CspFeature from './components/CspFeature/csp-feature';
+import CspFeatureWithHtmlEditor from './components/CspFeatureWithHtmlEditor/csp-feature-html-editor';
+import DataTableComponent from './components/DataTableComponent/data-table-component';
 
 import UITheme from './components/UITheme';
 //import { Grid } from 'gridjs-react';
@@ -24,6 +26,9 @@ function App() {
           <Route exact path="/features" element={<Feature/>}/>
           <Route exact path="/featureOne" element={<FeatureOne/>}/>
           <Route exact path="/cspFeature" element={<CspFeature/>}/>
+          <Route exact path="/cspFeatureWithHtmlEditor" element={<CspFeatureWithHtmlEditor/>}/>
+          <Route exact path="/data-table-component" element={<DataTableComponent/>}/>
+
         </Routes >
       </Router>
   );

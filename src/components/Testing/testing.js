@@ -1,5 +1,15 @@
 import React from 'react';
 
 export default function Testing() {
-  return <h2>Testing</h2>;
+    return  ( 
+      <div className='container'>
+          <div className='row'> 
+                <ul>
+                    <li>
+                        <a href="/data-table-component">DataTableComponent</a>
+                    </li>
+                </ul>
+          </div>
+      </div>
+);
 }

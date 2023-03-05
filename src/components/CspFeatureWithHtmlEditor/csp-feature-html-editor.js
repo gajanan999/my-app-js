@@ -1,13 +1,21 @@
 import React, { useRef, useState, useEffect } from 'react';
 import * as cheerio from 'cheerio';
 
-export default function CspFeature() {
+export default function CspFeatureWithHtmlEditor() {
     const [html, setHtml] = useState('');
     const styleRef = useRef(null);
-
+    const [postContent, setPostContent] = useState('');
 
     useEffect(() => {
 
+
+        setHtml(postContent)
+
+        
+      
+      }, []);
+
+      function separateHtmlAndCSS(html){
         const cspHeader = document.querySelector("meta[http-equiv='Content-Security-Policy']").getAttribute('content');
 
         console.log('cspHeader', cspHeader);
@@ -29,36 +37,21 @@ export default function CspFeature() {
                 nonce2 = nonce1.split("'")[1];
             }
             nonce2 = nonce2.substring(6)
-            console.log('nonce2', nonce2)
+            console.log('nonce2', nonce2);
 
-
-            let htmlString = 
-            `<div style="color: red; background-color: yellow;" >hello</div>`
-          
-
-            const html1 =` <div style="color: red; background-color: yellow; height: 100%; width: 100%" >
-                                <div style="color: blue; background-color: green; height: 90%; width: 90%" >
-                                    <div style="color: blue; background-color: navy; height: 80%; width: 80%" >
-                                        <div style="color: blue; background-color: white; height: 700%; width: 70%" >
-                                            <div style="color: blue; background-color: black; height: 600%; width: 60%" >
-                                                <div style="color: blue; background-color: orange; height: 500%; width: 50%; text-align:center" >
-                                                        It finally worked!!!!!!!!!!!!!!!!!!!!!
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        `;
-
-            setStyle(htmlString,nonce2);
-            setHtml(html1);
+            setStyle(html,nonce2);
             
             
         }
-      
-      }, []);
+      }
+
+      function changeHtml(e){
+          setPostContent(e.target.value)
+
+          //separateHtmlAndCSS(e.target.value)
+          
+          setHtml(e.target.value);
+      }
 
 
       function setStyle(html1, nonce2){
@@ -84,21 +77,30 @@ export default function CspFeature() {
         console.log(css);
         console.log($.html());
 
-        //setHtml($.html())
+        setHtml($.html())
         //setHtml(html1)
 
         const styleTag = document.createElement('style');
         styleTag.innerHTML = css;
         styleTag.setAttribute('nonce', nonce2);
-       styleRef.current.appendChild(styleTag);
+        styleRef.current.appendChild(styleTag);
 
       }
     
       return (
-        <div>
-            <div ref={styleRef} />
-            <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div className='container'>
+             <div className='row mt-4'>
+               <label style={{ color: 'black', fontWeight: 600 }}>Csp Feature With Html Editor </label>
+             </div>
+            <div className='row mt-4'>
+                < label style={{ color: 'black', fontWeight: 600 }}>Input Area</label>
+                <textarea value={postContent} onChange={e => changeHtml(e)} name="postContent" />
+            </div>
+            <div className='row' ref={styleRef} />
+            <div className='row mt-4' >HTML: </div>
+            <div  className='row' dangerouslySetInnerHTML={{ __html: html }}/>
         </div>
+
       );
 }
  
