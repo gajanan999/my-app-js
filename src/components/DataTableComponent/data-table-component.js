@@ -7,10 +7,47 @@ export default function DataTableComponent() {
         ['John Doe', 'johndoe@example.com', 'Male', 'New York'],
         ['Jane Doe', 'janedoe@example.com', 'Female', 'California'],
         ['Bob Smith', 'bobsmith@example.com', 'Male', 'Texas'],
+        ['John Doe', 'johndoe@example.com', 'Male', 'New York'],
+        ['Jane Doe', 'janedoe@example.com', 'Female', 'California'],
+        ['Bob Smith', 'bobsmith@example.com', 'Male', 'Texas'],
+        ['John Doe', 'johndoe@example.com', 'Male', 'New York'],
+        ['Jane Doe', 'janedoe@example.com', 'Female', 'California'],
+        ['Bob Smith', 'bobsmith@example.com', 'Male', 'Texas'],
+        ['John Doe', 'johndoe@example.com', 'Male', 'New York'],
+        ['Jane Doe', 'janedoe@example.com', 'Female', 'California'],
+        ['Bob Smith', 'bobsmith@example.com', 'Male', 'Texas'],
+        ['John Doe', 'johndoe@example.com', 'Male', 'New York'],
+        ['Jane Doe', 'janedoe@example.com', 'Female', 'California'],
+        ['Bob Smith', 'bobsmith@example.com', 'Male', 'Texas'],
+        ['John Doe', 'johndoe@example.com', 'Male', 'New York'],
+        ['Jane Doe', 'janedoe@example.com', 'Female', 'California'],
+        ['Bob Smith', 'bobsmith@example.com', 'Male', 'Texas'],
+        ['John Doe', 'johndoe@example.com', 'Male', 'New York'],
+        ['Jane Doe', 'janedoe@example.com', 'Female', 'California'],
+        ['Bob Smith', 'bobsmith@example.com', 'Male', 'Texas'],
+        ['John Doe', 'johndoe@example.com', 'Male', 'New York'],
+        ['Jane Doe', 'janedoe@example.com', 'Female', 'California'],
+        ['Bob Smith', 'bobsmith@example.com', 'Male', 'Texas'],
+        ['John Doe', 'johndoe@example.com', 'Male', 'New York'],
+        ['Jane Doe', 'janedoe@example.com', 'Female', 'California'],
+        ['Bob Smith', 'bobsmith@example.com', 'Male', 'Texas'],
+        ['John Doe', 'johndoe@example.com', 'Male', 'New York'],
+        ['Jane Doe', 'janedoe@example.com', 'Female', 'California'],
+        ['Bob Smith', 'bobsmith@example.com', 'Male', 'Texas'],
+        ['John Doe', 'johndoe@example.com', 'Male', 'New York'],
+        ['Jane Doe', 'janedoe@example.com', 'Female', 'California'],
+        ['Bob Smith', 'bobsmith@example.com', 'Male', 'Texas'],
+        
       ];
+
+    const [h, setH] = useState([])
+    const [hAnswer, setHAnswer] = useState('');
       
     const columns = ['Name', 'Email', 'Gender', 'Location'];
+    const htmlFormatter = () => {
 
+      return ['Name', 'Email', 'Gender', 'Location']
+    }
 
     const options = {
         style: {
@@ -42,15 +79,34 @@ export default function DataTableComponent() {
             results: () => 'Users',
           }
         }
+        // Adding a custom callback function to get the search result count
+        // and update the state of the component
+      
     };
+
+    const clearH = () => {
+      setH([])
+    }
+  
+    const handleHChange = (e) => {
+      setHAnswer(e.target.value)
+      let h1 = h
+      h.push(e.target.value)
+    }
 
 
     return (
         <div>
-          <h1>User Table</h1>
-          <GridComponent data={data} columns={columns} options={options} />
-        </div>
-      );
-      
+          <textarea
+            value={hAnswer}
+            onChange={handleHChange}
+          />
 
+          <button onClick={clearH}>clear</button>
+          <h4>{h}</h4>
+          <GridComponent data={data} columns={htmlFormatter()} options={options} />
+        </div>
+    );
+      
+{}
 }

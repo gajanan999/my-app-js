@@ -58,6 +58,7 @@ function UITheme() {
         // });
     }
 
+
     return (
 
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -84,6 +85,9 @@ function UITheme() {
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="/testing">Testing</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/demo">Demo Component</a>
                     </li>
                 </ul>
             </div>

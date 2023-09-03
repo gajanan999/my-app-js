@@ -1,15 +1,21 @@
 import React from 'react';
+import {createContext, useContext} from "react"
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'mobx-react';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import  userStore  from './components/StateManagement/formik/formik-store';
+const UserStoreContext = createContext();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <UserStoreContext.Provider value={userStore}>
+      <App />
+    </UserStoreContext.Provider>
   </React.StrictMode>
 );
 

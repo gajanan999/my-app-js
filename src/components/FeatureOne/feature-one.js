@@ -54,50 +54,15 @@ export default function FeatureOne() {
             let index = allColumns.indexOf(element)
             element.visible = !element.visible
             allColumns[index]= element
-            // let item = mainTablecolumns.find((x)=>{
-            //     return x.name === columnName
-            // })
-    
-            // if(null != item){
-            //     let index = mainTablecolumns.indexOf(item)
-            //     item.visible = !item.visible
-            //     mainTablecolumns[index]= item
-            // }
+
 
         }
 
-      
-        /*
-        let item = mainTablecolumns.find((x)=>{
-            return x.name === columnName
-        })
-
-        if(null != item){
-            let index = mainTablecolumns.indexOf(item)
-            item.visible = !item.visible
-            mainTablecolumns[index]= item
-        }else{
-            let element = allColumns.find((x)=>{
-                return x.name === columnName
-            })
-            if(element){
-                let index = allColumns.indexOf(item)
-                element.visible = !element.visible
-                allColumns[index]= element
-                mainTablecolumns.push(element)
-    
-            }
-        }*/
-        
     }
 
     const handleSave = () => {
 
         let col = []
-       //setMainTablecolumns(...col)
-      // mainTablecolumns = mainTablecolumns.slice(1)
-       
-
 
         allColumns.forEach((element)=>{
            if(element.visible){
@@ -146,14 +111,7 @@ export default function FeatureOne() {
 
     }
 
-    
-
-
-
-
     function activeCheckBox(cell, row){
-
-
         if(cell)
             return html(`<input type="checkbox" checked/>`)
         else
@@ -232,27 +190,27 @@ export default function FeatureOne() {
               <button onClick={refresh}> filter table</button>
               <div className="row">
                 <Grid
-                                data={getData}
-                                columns={mainTablecolumns}
-                                search={true}
-                                pagination={{
-                                    limit: 5,
-                                }}
-                                style={{
-                                    table: {
-                                    border: '3px solid #ccc',
-                                    width: '-webkit-fill-available'
-                                    },
-                                    th: {
-                                    'background-color': 'rgba(0, 0, 0, 0.1)',
-                                    color: '#000',
-                                    'border-bottom': '3px solid #ccc',
-                                    'text-align': 'center'
-                                    },
-                                    td: {
-                                    'text-align': 'center'
-                                    }
-                                }}
+                    data={getData}
+                    columns={mainTablecolumns}
+                    search={true}
+                    pagination={{
+                        limit: 5,
+                    }}
+                    style={{
+                        table: {
+                        border: '3px solid #ccc',
+                        width: '-webkit-fill-available'
+                        },
+                        th: {
+                        'background-color': 'rgba(0, 0, 0, 0.1)',
+                        color: '#000',
+                        'border-bottom': '3px solid #ccc',
+                        'text-align': 'center'
+                        },
+                        td: {
+                        'text-align': 'center'
+                        }
+                    }}
                 />
               </div> 
         </div>  
